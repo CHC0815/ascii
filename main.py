@@ -1,3 +1,4 @@
+import sys
 import cv2
 import numpy as np
 
@@ -18,7 +19,8 @@ def main():
     # density = " "*char_offset + "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/…\|()1\{\}[]?-_+~<>i!lI;:,\"^`'. "
     density = " "*char_offset + "Ñ@#W$9876543210?!abc;:+=-,._ "
     length = len(density)
-    gray = True
+    
+    gray = True if len(sys.argv) == 1 else False
 
     while True:
         ret, frame = vid.read()
